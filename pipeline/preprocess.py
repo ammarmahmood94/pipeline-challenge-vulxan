@@ -3,6 +3,7 @@ from langdetect import detect, LangDetectException
 
 
 def load_data(file_path: str) -> pd.DataFrame:
+    
     """
     Load articles from a CSV File
 
