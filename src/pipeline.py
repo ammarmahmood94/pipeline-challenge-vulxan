@@ -1,0 +1,24 @@
+import os
+
+import pandas as pd
+
+from preprocess import load_data, clean_text 
+
+
+def main():
+
+    # Organize File Path
+    work_dir = "/Users/ammarmahmood/syenah-assignment/pipeline-challange-vulxun"
+    file_path = os.path.join(work_dir, "data/articles.csv")
+
+    # Read the File Contents
+    df = load_data(file_path)
+
+    # Display Information columns
+    print(df.columns)
+
+    #
+
+
+if __name__=="__main__":
+    main()
