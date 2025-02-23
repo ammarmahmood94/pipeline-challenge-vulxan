@@ -2,7 +2,7 @@ import os
 
 import pandas as pd
 
-from preprocess import load_data, clean_text 
+from preprocess import load_data, preprocess_articles 
 
 
 def main():
@@ -17,7 +17,10 @@ def main():
     # Display Information columns
     print(df.columns)
 
-    # 
+    # Preprocess Articles
+    print("preprocessing initiated")
+    df = preprocess_articles(df)
+    print(df.head(10))
 
 
 if __name__=="__main__":
