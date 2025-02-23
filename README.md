@@ -1,7 +1,7 @@
 **Task: News Article Processing Pipeline**
 
 ### Overview:
-You are provided with a list of news articles (existsing in folder data). Your task is to develop a pipeline that processes these articles and converts them into structured information. The pipeline should include preprocessing, named entity recognition (NER), topic classification, sentiment analysis, summarization, keyword extraction, and structured data storage.
+You are provided with a list of news articles (existing in folder data). Your task is to develop a pipeline that processes these articles and converts them into structured information. The pipeline should include preprocessing, named entity recognition (NER), topic classification, sentiment analysis, summarization, keyword extraction, and structured data storage.
 
 ### Task Requirements:
 #### **1. Preprocessing:**
