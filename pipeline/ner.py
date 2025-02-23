@@ -31,7 +31,7 @@ def extract_filtered_entities(text: str) -> dict:
     return entities
 
 
-def process_dataframe(df: pd.DataFrame, content_column: str = "content") -> pd.DataFrame:
+def process_ner(df: pd.DataFrame, content_column: str = "content") -> pd.DataFrame:
     
     """
     Process a DataFrame of articles by extracting filtered entities for each article.

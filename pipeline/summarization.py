@@ -1,6 +1,8 @@
 import json
 from langchain_core.prompts import PromptTemplate
 from langchain_openai import OpenAI
+import pandas as pd
+
 
 
 def summarize_text(text: str) -> dict:
@@ -27,3 +29,14 @@ def summarize_text(text: str) -> dict:
         result = {"summary": ""}
     
     return result
+
+
+def process_summary(df: pd.DataFrame, content_column: str = "content") -> pd.DataFrame:
+    
+    """
+    Process a DataFrame of articles by extracting filtered entities for each article.
+    """
+
+    df["summary"] = df[content_column].apply(summarize_text)
+    
+    return df

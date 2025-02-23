@@ -1,6 +1,8 @@
 import json
 from langchain_core.prompts import PromptTemplate
 from langchain_openai import OpenAI
+import pandas as pd
+
 
 
 def classify_topic(text: str) -> dict:
@@ -27,3 +29,14 @@ def classify_topic(text: str) -> dict:
         result = {"topic": "Unknown"}
     
     return result
+
+
+def process_classify(df: pd.DataFrame, content_column: str = "content") -> pd.DataFrame:
+    
+    """
+    Process a DataFrame of articles by extracting filtered entities for each article.
+    """
+
+    df["topic"] = df[content_column].apply(classify_topic)
+    
+    return df

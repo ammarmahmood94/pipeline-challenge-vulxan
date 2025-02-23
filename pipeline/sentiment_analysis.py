@@ -1,7 +1,8 @@
-
 import json
 from langchain_core.prompts import PromptTemplate
 from langchain_openai import OpenAI
+import pandas as pd
+
 
 
 def analyze_sentiment(text: str) -> dict:
@@ -28,3 +29,14 @@ def analyze_sentiment(text: str) -> dict:
         result = {"sentiment": "Neutral"}
     
     return result
+
+
+def process_sentiment(df: pd.DataFrame, content_column: str = "content") -> pd.DataFrame:
+    
+    """
+    Process a DataFrame of articles by extracting filtered entities for each article.
+    """
+
+    df["sentiment"] = df[content_column].apply(analyze_sentiment)
+    
+    return df
